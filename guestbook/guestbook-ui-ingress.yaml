@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: guestbook-ui-ingress
+  name: guestbook-ingress
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
@@ -11,10 +11,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-      - guestbook-ui.artamerl.com
-    secretName: guestbook-ui.artamerl.com
+      - guestbook.artamerl.com
+    secretName: guestbook.artamerl.com
   rules:
-  - host: guestbook-ui.artamerl.com
+  - host: guestbook.artamerl.com
     http:
       paths:
       - path: /
